@@ -1,0 +1,369 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 29, 2019 at 09:57 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `yoursmart`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `cust_id` int(200) NOT NULL,
+  `datetimepurch` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cust_items` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cust_total` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cust_paid` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cust_bal` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`cust_id`, `datetimepurch`, `cust_items`, `cust_total`, `cust_paid`, `cust_bal`) VALUES
+(1, '29-04-2019 13:04:45 pm', '[\"SPRITZER 1500ML\"]', '9.80', '10.00', '0.20'),
+(2, '29-04-2019 13:09:32 pm', '[\"ChaCheer KUACI \",\"SPRITZER 1500ML\"]', '9.80', '70.00', '60.20'),
+(3, '29-04-2019 13:13:01 pm', '[\"ChaCheer KUACI \",\"SPRITZER 1500ML\"]', '9.80', '70.00', '60.20'),
+(4, '29-04-2019 13:18:00 pm', '[\"ChaCheer KUACI \",\"ChaCheer KUACI \"]', '12.00', '50.00', '38.00'),
+(5, '29-04-2019 13:19:45 pm', '[\"ChaCheer KUACI \",\"ChaCheer KUACI \"]', '12.00', '15.00', '3.00'),
+(6, '29-04-2019 13:24:59 pm', 'null', '12.00', '15.00', '3.00'),
+(7, '29-04-2019 13:26:29 pm', 'null', '12.00', '15.00', '3.00'),
+(8, '29-04-2019 13:27:00 pm', '[\"ChaCheer KUACI \",\"ChaCheer KUACI \",\"ChaCheer KUACI \",\"ChaCheer KUACI \"]', '24.00', '50.00', '26.00'),
+(9, '29-04-2019 14:17:14 pm', '[\"ChaCheer KUACI \"]', '6.00', '10.00', '4.00'),
+(10, '29-04-2019 17:00:24 pm', '[\"ChaCheer KUACI \",\"SAYURAN\",\"AYAM\",\"Parachute 190ML\",\"SAYUR\"]', '33.10', '40.00', '6.90'),
+(11, '29-04-2019 17:03:18 pm', '[\"SAYUR\"]', '3.50', '10.00', '6.50'),
+(12, '29-04-2019 17:05:38 pm', '[\"SAYURAN\"]', '5.50', '10.00', '4.50'),
+(13, '29-04-2019 17:37:36 pm', '[\"ChaCheer KUACI \"]', '6.00', '30.00', '24.00'),
+(14, '29-04-2019 18:07:05 pm', '[\"ChaCheer KUACI \",\"Parachute 190ML\"]', '14.50', '20.00', '5.50'),
+(15, '29-04-2019 23:57:42 pm', '[\"ChaCheer KUACI \",\"Parachute 190ML\",\"ChaCheer KUACI \",\"Parachute 190ML\",\"OYOSHI GREEN TE\",\"PARACHUTE 190ML\"]', '36.40', '50.50', '14.10'),
+(16, '30-04-2019 00:07:25 am', '[\"SAYUR\"]', '5.80', '7.00', '1.20'),
+(17, '30-04-2019 00:11:58 am', '[\"EGG\"]', '12.00', '20.00', '8.00'),
+(18, '30-04-2019 00:14:18 am', '[\"SAYUR\"]', '10.50', '10.50', '0.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(3) NOT NULL,
+  `uname` varchar(200) COLLATE utf8_bin NOT NULL,
+  `password` varchar(200) COLLATE utf8_bin NOT NULL,
+  `email` varchar(200) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `uname`, `password`, `email`) VALUES
+(1, 'admin', 'admin', 'kesavan913@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `onholdone`
+--
+
+CREATE TABLE `onholdone` (
+  `hold_id` int(200) NOT NULL,
+  `holdbarc` varchar(255) COLLATE utf8_bin NOT NULL,
+  `holdprod` varchar(255) COLLATE utf8_bin NOT NULL,
+  `holdprice` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `onholdtwo`
+--
+
+CREATE TABLE `onholdtwo` (
+  `hold_id` int(200) NOT NULL,
+  `holdbarc` varchar(255) COLLATE utf8_bin NOT NULL,
+  `holdprod` varchar(255) COLLATE utf8_bin NOT NULL,
+  `holdprice` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `onholdtwo`
+--
+
+INSERT INTO `onholdtwo` (`hold_id`, `holdbarc`, `holdprod`, `holdprice`) VALUES
+(19, '17', 'EGG', '4.20'),
+(20, '23', 'Timbang', '5.80'),
+(21, '14', 'FISH', '14.60');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pos`
+--
+
+CREATE TABLE `pos` (
+  `pos_id` int(200) NOT NULL,
+  `posbarc` varchar(255) COLLATE utf8_bin NOT NULL,
+  `posprod` varchar(255) COLLATE utf8_bin NOT NULL,
+  `posprice` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `pos`
+--
+
+INSERT INTO `pos` (`pos_id`, `posbarc`, `posprod`, `posprice`) VALUES
+(462, '11', 'SAYUR', '5.50'),
+(463, '18', 'ICE', '3.50'),
+(464, '20', 'NILAI RM1', '1.00'),
+(465, '21', 'NILAI RM2', '2.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(200) NOT NULL,
+  `pbcode` varchar(254) COLLATE utf8_bin NOT NULL,
+  `pname` varchar(254) COLLATE utf8_bin NOT NULL,
+  `pprice` varchar(254) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `pbcode`, `pname`, `pprice`) VALUES
+(11, '9556145116157', 'SPRITZER 1500ML', '3.80'),
+(12, '081364361693', 'UBAT BATUK CAP 150ml', '11.50'),
+(13, '4005808593941', 'NIVEA WHITENING CELL REPAIR & PROTECT 125ML', '9.90'),
+(15, '9556135421506', 'SUMMER DRINKING WATER 1500ML', '1.50'),
+(16, '9556111625188', 'DETTOL MULTI SURFACE CLEANER', '15.50'),
+(17, '9556111637839', 'DETTOL MULTI SURFACE CLEANER JASMINE 2000ML', '15.50'),
+(18, '9556111625195', 'DETTOL MULTI SURFACE CLEANER LAVENDER 2000ML', '15.50'),
+(19, '9556111625201', 'DETTOL MULTI SURFACE CLEANER CITRUS 2000ML', '15.50'),
+(20, '9556126648851', 'BREEZE POWER CLEAN 1.8KG', '14.50'),
+(21, '9556126648868', 'BREEZE COLOUR CARE 1.8KG', '14.50'),
+(22, '9556126663120', 'BREEZE LUXURY PERFUME 1.5KG', '14.50'),
+(23, '9556126652810', 'BREEZE FRAGRANCE OF COMFORT 1.5KG', '14.50'),
+(24, '9556126648875', 'BREEZE GOODBYE MUSTY 1.8KG', '14.50'),
+(25, '9556444701078', 'AVA AROMA ROSES 3000ML', '9.80'),
+(26, '9556444701016', 'AVA AROMA LAVENDER 3000ML', '9.80'),
+(27, '9555047001387', 'MORSHINE LEMON-FRESH SHINE 2000ML', '9.80'),
+(28, '9555047001394', 'MORSHINE LIME-FRESH SHINE 2000ML', '9.80'),
+(29, '8934868096771', 'SUNLIGHT LIME 400ML', '3.50'),
+(30, '8934868096757', 'SUNLIGHT LEMON 400ML', '3.50'),
+(31, '9556126663274', 'SUNLIGHT NATURE MINERAL SALT & ALOE VERA 1000ML', '7.00'),
+(32, '9556126665148', 'SUNLIGHT ANTI-ODOUR MATCHA GREEN TEA & LIME 1000ML', '7.00'),
+(33, '9556126652964', 'SUNLIGHT LIME 1000ML', '7.00'),
+(34, '9556126665131', 'SUNLIGHT ANTI-BACTERIAL LEMON & MINT 1000ML', '7.00'),
+(35, '9556126652971', 'SUNLIGHT LEMON 1000ML', '7.00'),
+(36, '9555869701113', 'SURIA LEMON 1LITER', '4.50'),
+(37, '9555869701106', 'SURIA LIME 1LITER', '4.50'),
+(38, '9556126648677', 'BREEZE COLOUR CARE 900G', '7.50'),
+(39, '9556126648660', 'BREEZE POWER CLEAN 900G', '7.50'),
+(40, '8934868093107', 'COMFORT ULTRA BLOSSOM FRESH 400ML', '5.20'),
+(41, '8934868093145', 'COMFORT ULTRA MORNING FRESH 400ML', '5.20'),
+(42, '8934868093121', 'COMFORT ULTRA MORNING FRESH 800ML', '11.00'),
+(43, '8934868093084', 'COMFORT ULTRA BLOSSOM FRESH 800ML', '11.00'),
+(44, '8934868114789', 'COMFORT ULTRA AROMATHERAPY 800ML', '11.90'),
+(45, '8934868114802', 'COMFORT ULTRA AROMATHERAPY 800ML', '11.90'),
+(46, '9556444700569', 'AVA PELAIS ULTRA PERFUME SPRING BOUQUET 900ML', '8.50'),
+(47, '9556126639965', 'Cif CREAM WITH NATURAL MICRO CRYSTALS 500ML', '5.90'),
+(48, '9556126639965', 'Cif CREAM MULTI-SURFACE CLEANER 500ML', '5.90'),
+(49, '9557432080014', 'e-care DISH WASH LEMON 1LITRE', '4.50'),
+(50, '9557432080021', 'e-care DISH WASH LIME 1LITRE', '4.50'),
+(51, '9556046525058', 'ZiP DISHWASH LIQUID GINGER TEA 900ML', '6.90'),
+(52, '8886338302809', 'LEO WIPE STAIN REMOVER 1LITRE', '4.80'),
+(53, '9555303802000', 'SURE CLEAN STAIN REMOVER 1000ML', '4.80'),
+(54, '8888267338102', 'Sof Scrub Deep Action 500ML', '4.90'),
+(55, '8998866603997', 'Daia FLOOR CLEANER STIMULATING LEMON 900ML', '4.90'),
+(56, '8998866603973', 'Daia FLOOR CLEANER RELAXING ROSE 900ML', '4.90'),
+(57, '8998866801416', 'Daia FLOOR CLEANER CALMING LAVENDER 900ML', '4.90'),
+(58, '9556887200312', 'DEEPEX PENGHAPUS MINYAK 900G', '3.80'),
+(59, '9556031090059', 'GLO PEKAT LIMAU 900ML', '6.00'),
+(60, '9556031090066', 'GLO PEKAT LEMON 900ML', '6.00'),
+(61, '9556031090080', 'GLO PEKAT LIMAU 450ML', '4.20'),
+(62, '9556031090097', 'GLO PEKAT LEMON 450ML', '4.20'),
+(63, '9555567300052', 'ZITO LEMON DISHWASH LIQUID 500ML', '2.80'),
+(64, '9556444700866', 'KUAT HARIMAU LEMON ZAP 500ML', '3.00'),
+(65, '9556444700873', 'KUAT HARIMAU KUASA LIMAU 500ML', '3.00'),
+(66, '9556444700903', 'KUAT HARIMAU KUASA LIMAU 900ML', '4.40'),
+(67, '9556444701214', 'K1000 CECAIR PENCUCI PINGGAN 900ML', '3.90'),
+(68, '9556444700897', 'KUAT HARIMAU LEMON ZAP 900ML', '4.40'),
+(69, '9554100288727', 'PREZ FLORAL BLOSSOM 500ML', '9.50'),
+(70, '9554100288741', 'PREZ SPRING FRESH 500ML', '9.50'),
+(71, '9556444302404', 'MR.KUAT MULTI-SURFACE CLEANER LAVENDER 2LITRES', '9.80'),
+(72, '9556444701351', 'KUAT HARIMAU DISHWASHING LIQUID 650ML', '2.00'),
+(73, '9556444701054', 'AVA AROMA ROSES 900ML', '3.50'),
+(74, '9556444701320', 'KUAT HARIMAU KUASA LIMAU 650ML', '2.90'),
+(75, '9556444701313', 'KUAT HARIMAU LEMON ZAP 650ML', '2.90'),
+(76, '8886338303684', 'LEO DISHWASH 650ML', '3.00'),
+(77, '8886338302953', 'LEO DISHWASH 650ML', '3.00'),
+(78, '4902430650441', 'DYNAMO DOWNY 810G', '9.90'),
+(79, '9556444700996', 'AVA AROMA LAVENDER 900ML', '3.50'),
+(80, '4902430636797', 'DYNAMO 900G', '9.90'),
+(81, '9556444701023', 'AVA AROMA FLORAL 900ML', '3.50'),
+(82, '8998866802536', 'DAIA MORNING MIST 900ML', '4.20'),
+(83, '8998866802635', 'DAIA FRESHING NATURE 900ML', '4.20'),
+(84, '9556444302237', 'WiN Citrus Blossom 1.8KG', '9.00'),
+(85, '8999999033286', 'SUNLIGHT LEMON 700ML', '4.90'),
+(86, '8999999033262', 'SUNLIGHT LIME 700ML', '4.90'),
+(87, '9556031088131', 'SOFTLAN ANTI-WRINKLES SPRING FRESH 900ML', '4.50'),
+(88, '9556031309663', 'SOFTLAN ANTI-WRINKLES FLORAL FANTASY 900ML', '4.50'),
+(89, '8934868114772', 'COMFORT ULTRA AROMATHERAPY MAGICAL 800ML', '10.80'),
+(90, '8934868114796', 'COMFORT ULTRA AROMATHERAPY ROMANTIC 800ML', '10.80'),
+(91, '8999999519964', 'COMFORT ULTRA WHITE MUSK 900ML', '10.80'),
+(92, '8934868093046', 'COMFORT ULTRA BLOSSOM FRESH 800ML', '9.80'),
+(93, '8998866802451', 'DAIA BLOOMING GARDEN 900ML', '4.20'),
+(94, '9556444701276', 'AVA PEWANGI ESSENTIAL ROSE 1800ML', '5.80'),
+(95, '9556444701061', 'AVA AROMA ROSES 1800ML', '5.80'),
+(96, '9556444701030', 'AVA AROMA FLORAL 1800ML', '5.80'),
+(97, '9556444701399', 'AVA SECRET FANTASY 1800ML', '5.80'),
+(98, '9556444701269', 'AVA PEWANGI VIOLET SENSATIONS 1800ML', '5.80'),
+(99, '9556444701009', 'AVA AROMA LAVENDER 1800ML', '5.80'),
+(100, '9556444701450', 'AVA CONCENTRATED FABRIC SOFTENER 1600ML', '5.70'),
+(101, '9556285002440', 'BIO ZIP COLOUR 100G', '0.80'),
+(102, '9556285011121', 'BIO ZIP PARFUM BOUQUET 100G', '0.80'),
+(103, '9556285002433', 'BIO ZIP FLORA 100G', '0.80'),
+(104, '9556031309694', 'SOFTLAN ANTI-WRINKLES FLORAL FANTASY 1.6L', '7.20'),
+(105, '9556031309687', 'SOFTLAN ANTI-WRINKLES SPRING FRESH 1.6L', '7.20'),
+(106, '9556031309700', 'SOFTLAN ANTI-WRINKLES LAVENDER FRESH 1.6L', '7.20'),
+(107, '9556126648820', 'BREEZE POWER CLEAN 1.8KG', '11.90'),
+(108, '9556126652827', 'BREEZE FRAGRANCE OF COMFORT 1.5KG', '11.90'),
+(109, '9556126648844', 'BREEZE GOODBYE MUSTY 1.8KG', '11.90'),
+(110, '9556126648837', 'BREEZE COLOUR CARE 1.8KG', '11.90'),
+(111, '9556126663113', 'BREEZE LUXURY PERFUME 1.5KG', '11.90'),
+(112, '9556444301933', 'KUAT HARIMAU SUPER-K 1.8KG', '9.80'),
+(113, '9556444302374', 'KUAT HARIMAU SUPER-K 1.6KG', '9.50'),
+(114, '9556444301971', 'KUAT HARIMAU SUPER-K 1.8KG', '9.80'),
+(115, '8998866802642', 'DAIA REFRESHING NATURE 1800ML', '7.20'),
+(116, '8998866802543', 'DAIA MORNING MIST 1800ML', '7.20'),
+(117, '8998866802468', 'DAIA BLOOMING GARDEN 1800ML', '7.20'),
+(118, '8998866802338', 'DAIA WASHING POWDER COLOUR SHIELD 100G', '1.00'),
+(119, '8998866000192', 'DAIA WASHING POWDER LEMON CITRUS 100G', '1.00'),
+(120, '8998866603843', 'DAIA WASHING POWDER FLORAL FRESHNESS 100G', '1.00'),
+(122, '6924187821538', 'ChaCheer KUACI 220G', '6.00'),
+(123, '11', 'SAYUR', ''),
+(124, '12', 'SAYURAN', ''),
+(125, '13', 'AYAM', ''),
+(126, '14', 'FISH', ''),
+(127, '15', 'DAGING', ''),
+(128, '16', 'FISHBALL/FISHCAKE', ''),
+(130, '17', 'EGG', ''),
+(131, '18', 'ICE', ''),
+(132, '19', 'HOUSEHOLD', ''),
+(133, '20', 'NILAI RM1', '1.00'),
+(134, '21', 'NILAI RM2', '2.00'),
+(135, '22', 'LAIN-LAIN', ''),
+(136, '23', 'Timbang', ''),
+(141, '8854698009461', 'OYOSHI GREEN TEA 380ML', '1.90'),
+(142, '8901088047302', 'PARACHUTE 190ML', '5.50');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`cust_id`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `onholdone`
+--
+ALTER TABLE `onholdone`
+  ADD PRIMARY KEY (`hold_id`);
+
+--
+-- Indexes for table `onholdtwo`
+--
+ALTER TABLE `onholdtwo`
+  ADD PRIMARY KEY (`hold_id`);
+
+--
+-- Indexes for table `pos`
+--
+ALTER TABLE `pos`
+  ADD PRIMARY KEY (`pos_id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `cust_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `onholdone`
+--
+ALTER TABLE `onholdone`
+  MODIFY `hold_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+
+--
+-- AUTO_INCREMENT for table `onholdtwo`
+--
+ALTER TABLE `onholdtwo`
+  MODIFY `hold_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `pos`
+--
+ALTER TABLE `pos`
+  MODIFY `pos_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=469;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
